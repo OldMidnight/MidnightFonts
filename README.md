@@ -1,5 +1,5 @@
 ## Description
-This module allows you to easily and systemless-ly swiych fonts from a wide range of sources. No need to go to recovery as everything is done from your terminal. 
+This module allows you to easily and systemless-ly switch fonts from a wide range of sources. No need to go to recovery as everything is done from your terminal. 
 
 After flashing, type 'fonts' in a terminal to begin.
 
@@ -23,5 +23,4 @@ v1.2.3
 v1500
 
 #### NOTICE
-
 * You should use latest Magisk Manager to install this module. If you meet any problem under installation from Magisk Manager, please try to install it from recovery.
