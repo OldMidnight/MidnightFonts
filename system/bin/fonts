@@ -1,0 +1,337 @@
+alias wget="sbin/.core/busybox/wget"
+alias rev="sbin/.core/busybox/rev"
+alias unzip="sbin/.core/busybox/unzip"
+alias du="sbin/.core/busybox/du"
+DIR="/sbin/.core/img/MidnightFonts/system/fonts"
+STOREFONT=/sdcard/Fonts
+FONTBACK=/sdcard/MidnightBackup
+if [ ! -d "$STOREFONT" ] || [ ! -d "$DIR" ] || [ ! -d "$FONTBACK"]
+then
+mkdir "$STOREFONT"
+mkdir "$DIR"
+mkdir "$FONTBACK"
+fi
+get_font () {
+	clear
+	echo "Retrieving font..."
+	if [ -d "$STOREFONT"/"$FONT" ]; then
+		chmod 777 "$STOREFONT"/"$FONT"
+		echo "completing step 1..."
+	fi
+}
+zip_sort_no_store () {
+	echo ""
+	if [ -d "$STOREFONT"/META-INF ] && [ -d "$STOREFONT"/system ]; then
+		echo "completing step 2..."
+		cp -f "$STOREFONT"/system/fonts/* "$DIR"/
+		chmod 644 $DIR/*
+		echo "cleaning up..."
+		rm -r "$STOREFONT"
+		echo "************************************************"
+		echo "Reboot for changes to take effect!!!!"
+		echo "************************************************"
+		echo "done!"
+	else
+		echo "Wrong zip format, please try another font"
+		fi
+}
+zip_sort_store () {
+	echo ""
+	if [ -d "$STOREFONT"/META-INF ] && [ -d "$STOREFONT"/system ]; then
+		echo "completing step 2..."
+		echo "Font being saved to $FONTBACK..."
+		cp -f "$STOREFONT"/system/fonts/* "$DIR"/
+		chmod 644 $DIR/*
+		mkdir "$FONTBACK"/"$FONT2"
+		mv "$STOREFONT"/system "$STOREFONT"/META-INF "$FONTBACK"/"$FONT2"
+		rm -r "$STOREFONT"
+		echo "Font has been stored Locally"
+		echo "************************************************"
+		echo "Reboot for changes to take effect!!!!"
+		echo "************************************************"
+		echo "done!"
+	else
+		echo "Wrong zip format, please try another font"
+		fi
+}
+other_steps_no_store () {
+	clear
+	wget -O "$STOREFONT"/"$FONT" "$LINK"
+	get_font
+	unzip "$STOREFONT"/"$FONT" -d "$STOREFONT"
+	zip_sort_no_store
+}
+other_steps_store () {
+	clear
+	wget -O "$STOREFONT"/"$FONT" "$LINK"
+	get_font
+	unzip "$STOREFONT"/"$FONT" -d "$STOREFONT"
+	zip_sort_store
+}
+font_steps () {
+	echo ""
+	echo "Would you like to save this font on your device?"
+	echo "All this would do is remove the need for an internet connection"
+	echo " when applying this font in the future"
+	echo "DISCLAIMER: Space on your device will be used!!"
+	echo "(y/n)"
+	read -r LOCALCHOICE
+	case "$LOCALCHOICE" in
+		y)
+			other_steps_store
+			;;
+		n)
+			other_steps_no_store
+			;;
+		*)
+			echo ""
+			echo "Invald Input."
+	esac
+}
+check_stored () {
+	clear
+	echo "Checking for locally saved version..."
+	if [ ! -d "$FONTBACK"/"$FONT2" ]
+	then
+		echo "This Font was not found in your local Repo."
+		echo "Resuming Process..."
+	else
+		echo "Detected locally saved version!"
+		echo "Applying font..."
+		cp -f "$FONTBACK"/"$FONT2"/system/fonts/* "$DIR"/
+		chmod 644 $DIR/*
+		echo "Font has been applied!"
+		echo "************************************************"
+		echo "Reboot for changes to take effect!!!!"
+		echo "************************************************"
+		exit 0
+	fi
+}
+clear
+echo "************************************************"
+echo "	MidnightFonts By OldMidnight	"
+echo "************************************************"
+echo ""
+echo "choose from the selection of fonts offered below"
+echo "enter the corresponding letter to choose one"
+echo ""
+echo "1) Helvetica Neue Best"
+echo "2) Ubuntu Updated"
+echo "3) Caviar Dreams"
+echo "4) Google Product Sans"
+echo "5) Comic Sans Original"
+echo "6) Rosemary"
+echo "7) Lato UI"
+echo "8) Chinacat"
+echo "9) Cocoon Light/Tall"
+echo "10) Century Gothic"
+echo "11) AppleMint"
+echo "12) Pycuaf"
+echo "13) Bellota"
+echo "14) GoodDog"
+echo "15) Scifly"
+echo "16) Oswald"
+echo "17) Oxygen"
+echo "18) Armani"
+echo "19) Cool Jazz"
+echo "20) Raindrops"
+echo "21) Storopia"
+echo "22) Exo2"
+echo "23) Bariol"
+echo "24) Exo"
+echo "25) Google Sans Mod"
+echo "26) Oneplus Slate"
+echo "q) to quit: "
+echo ""
+echo "To restore your stock font just disable this module in Magisk Manager"
+read -r INPUT
+case "$INPUT" in
+	1)
+		FONT="Font_HelveticaNeueBEST.zip"
+		FONT2="Font_HelveticaNeueBEST"
+		LINK="https://ncloud.zaclys.com/index.php/s/RspyZBU79fvfcGY/download"
+		check_stored
+		font_steps
+		;;
+	2)
+		FONT="Font_Ubunto083.zip"
+		FONT2="Font_Ubunto083"
+		LINK="https://ncloud.zaclys.com/index.php/s/cfQC5lnvjgLuLkl/download"
+		check_stored
+		font_steps
+		;;
+	3)
+		FONT="Font_CaviarDreams.zip"
+		FONT2="Font_CaviarDreams"
+		LINK="https://ncloud.zaclys.com/index.php/s/wguS035E34gfEY8/download"
+		check_stored
+		font_steps
+		;;
+	4)
+		FONT="Font_ProductSans2.zip"
+		FONT2="Font_ProductSans2"
+		LINK="https://ncloud.zaclys.com/index.php/s/MeicxCI7UPJOYh9/download"
+		check_stored
+		font_steps
+		;;
+	5)
+		FONT="Font_ComicSansMS_Original.zip"
+		FONT2="Font_ComicSansMS_Original"
+		LINK="https://ncloud.zaclys.com/index.php/s/x0D1yUNl7pR9Fyh/download"
+		check_stored
+		font_steps
+		;;
+	6)
+		FONT="Font_Rosemary.zip"
+		FONT2="Font_Rosemary"
+		LINK="https://ncloud.zaclys.com/index.php/s/nLZTSuwrtsqdLdj/download"
+		check_stored
+		font_steps
+		;;
+	7)
+		FONT="Font_LatoUIB-OPO.zip"
+		FONT2="Font_LatoUIB-OPO"
+		LINK="https://ncloud.zaclys.com/index.php/s/doKR7Ml03x2y3TX/download"
+		check_stored
+		font_steps
+		;;
+	8)
+		FONT="Font_ChinacatLight.zip"
+		FONT2="Font_ChinacatLight"
+		LINK="https://ncloud.zaclys.com/index.php/s/I3PtVa5EAMc9mnR/download"
+		check_stored
+		font_steps
+		;;
+	9)
+		FONT="Font_Cocon_LighterTaller.zip"
+		FONT2="Font_Cocon_LighterTaller"
+		LINK="https://ncloud.zaclys.com/index.php/s/DIBkr3tEJDdcibs/download"
+		check_stored
+		font_steps
+		;;
+	10)
+		FONT="Font_CenturyGothic.zip"
+		FONT2="Font_CenturyGothic"
+		LINK="https://ncloud.zaclys.com/index.php/s/ve2lRFgpGH4VSuP/download"
+		check_stored
+		font_steps
+		;;
+	11)
+		FONT="Font_Applemint.zip"
+		FONT2="Font_Applemint"
+		LINK="https://ncloud.zaclys.com/index.php/s/viKroUBEvzHEU60/download"
+		check_stored
+		font_steps
+		;;
+	12)
+		FONT="Font_Pycuaf.zip"
+		FONT2="Font_Pycuaf"
+		LINK="https://ncloud.zaclys.com/index.php/s/IH5wbpzlpBPkU9Z/download"
+		check_stored
+		font_steps
+		;;
+	13)
+		FONT="Font_Bellota.zip"
+		FONT2="Font_Bellota"
+		LINK="https://ncloud.zaclys.com/index.php/s/lH3SiCvdmzk85qw/download"
+		check_stored
+		font_steps
+		;;
+	14)
+		FONT="Font_GoodDog.zip"
+		FONT2="Font_GoodDog"
+		LINK="https://ncloud.zaclys.com/index.php/s/xCrjBtX7ByzLuCR/download"
+		check_stored
+		font_steps
+		;;
+	15)
+		FONT="Font_Scifly.zip"
+		FONT2="Font_Scifly"
+		LINK="https://ncloud.zaclys.com/index.php/s/baiNijmnlArWrDw/download"
+		check_stored
+		font_steps
+		;;
+	16)
+		FONT="Font_Oswald.zip"
+		FONT2="Font_Oswald"
+		LINK="https://ncloud.zaclys.com/index.php/s/Jt85AZqIPqSlcfZ/download"
+		check_stored
+		font_steps
+		;;
+	17)
+		FONT="Font_Oxygen.zip"
+		FONT2="Font_Oxygen"
+		LINK="https://ncloud.zaclys.com/index.php/s/FQdEHDSSFAyrRV9/download"
+		check_stored
+		font_steps
+		;;
+	18)
+		FONT="Font_Armani.zip"
+		FONT2="Font_Armani"
+		LINK="https://ncloud.zaclys.com/index.php/s/1omwpnWQPqh7Bk2/download"
+		check_stored
+		font_steps
+		;;
+	19)
+		FONT="Font_CoolJazz.zip"
+		FONT2="Font_CoolJazz"
+		LINK="https://ncloud.zaclys.com/index.php/s/Eoteo4NILqLhw7P/download"
+		check_stored
+		font_steps
+		;;
+	20)
+		FONT="Font_Raindrops.zip"
+		FONT2="Font_Raindrops"
+		LINK="https://ncloud.zaclys.com/index.php/s/2eOuB4vhcv2tVMY/download"
+		check_stored
+		font_steps
+		;;
+	21)
+		FONT="Font_Storopia.zip"
+		FONT2="Font_Storopia"
+		LINK="https://ncloud.zaclys.com/index.php/s/l1rXWw4i5VEU1Na/download"
+		check_stored
+		font_steps
+		;;
+	22)
+		FONT="Font_Exo2.zip"
+		FONT2="Font_Exo2"
+		LINK="https://ncloud.zaclys.com/index.php/s/LcnUOknWFyalqUz/download"
+		check_stored
+		font_steps
+		;;
+	23)
+		FONT="Font_Bariol.zip"
+		FONT2="Font_Bariol"
+		LINK="https://ncloud.zaclys.com/index.php/s/KfjmPcfaWLUFD3S/download"
+		check_stored
+		font_steps
+		;;
+	24)
+		FONT="Font_Exo.zip"
+		FONT2="Font_Exo"
+		LINK="https://ncloud.zaclys.com/index.php/s/iNzeK2JDJkVlUgg/download"
+		check_stored
+		font_steps
+		;;
+	25)
+		FONT="Font_GoogleSansMod.zip"
+		FONT2="Font_GoogleSansMod"
+		LINK="https://ncloud.zaclys.com/index.php/s/en3fzbYqE0p7Mad/download"
+		check_stored
+		font_steps
+		;;
+	26)
+		FONT="Font_OneplusSlate.zip"
+		FONT2="Font_OneplusSlate"
+		LINK="https://ncloud.zaclys.com/index.php/s/sBanwoo6n2oSsxw/download"
+		check_stored
+		font_steps
+		;;
+	q)
+		;;
+	*)
+		echo ""
+		echo "Invalid Input."
+		;;
+esac
