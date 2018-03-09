@@ -14,10 +14,10 @@ v1.2.3
 * v1.0.0 - STABLE RELEASE, completely reworked script, smaller with more functionality, added more fonts - 5/03/2018
 * v1.1.0 - Massive rework, I am now hosting all provided fonts myself, all requested fonts are fully added - 6/03/2018
 * v1.1.1 - quick font update
-*v1.2.0b - Implements fix zip for fonts with missing characters - 07/03/2018
-*v1.2.1 - added requested fonts, removed fix zip, optimized script, now much smaller - 07.03.2018
-*v1.2.2 - added option to store fonts locally, find any saved font in the Fonts folder in your internal storage - 08.03.2018
-*v1.2.3 - update fix
+* v1.2.0b - Implements fix zip for fonts with missing characters - 07/03/2018
+* v1.2.1 - added requested fonts, removed fix zip, optimized script, now much smaller - 07.03.2018
+* v1.2.2 - added option to store fonts locally, find any saved font in the Fonts folder in your internal storage - 08.03.2018
+* v1.2.3 - update fix
 
 #### Magisk Template
 v1500
