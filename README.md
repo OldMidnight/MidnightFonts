@@ -6,6 +6,16 @@ This module allows you to easily and systemless-ly switch fonts from a wide rang
 
 After flashing, type 'fonts' in a terminal to begin.
 
+## Information
+Flashing a new font on my device has always been a thing I did after rooting my device, but it was always something I would leave for 'later'. When I discovered fonts in the Magisk Manager I knew this would make it easier but it was still disparate. Multiple different fonts would each have a module and it seemed a wasted opportunity considering the flexibility of Magisk. so I made this. 
+By using this module:
+	* The need for multiple font zips on uour device is removed
+	* The mod cleans up itself meaning after downloading and applying a font it deletes all related files
+	* The option to locally store fonts is provided for those who want the option of switching fonts if no internet is available
+
+#### Note:
+* All fonts available in this module are all being hosted by me, so the font list will be maintained regularly and updated. Any font that hasnt been used in over a month will be removed. This rule will only apply after 50 fonts are available.
+
 ## Current Version
 v1.2.3
 
