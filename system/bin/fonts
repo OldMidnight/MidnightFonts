@@ -2,7 +2,7 @@ alias wget="sbin/.core/busybox/wget"
 alias rev="sbin/.core/busybox/rev"
 alias unzip="sbin/.core/busybox/unzip"
 alias du="sbin/.core/busybox/du"
-DIR="/sbin/.core/img/MidnightFonts/system/fonts"
+DIR="/magisk/MidnightFonts/system/fonts"
 STOREFONT=/sdcard/Fonts
 FONTBACK=/sdcard/MidnightBackup
 if [ ! -d "$STOREFONT" ] || [ ! -d "$DIR" ] || [ ! -d "$FONTBACK"]
