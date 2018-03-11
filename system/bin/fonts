@@ -113,7 +113,7 @@ echo "	MidnightFonts By OldMidnight	"
 echo "************************************************"
 echo ""
 echo "choose from the selection of fonts offered below"
-echo "enter the corresponding letter to choose one"
+echo "enter the corresponding number to choose one"
 echo ""
 echo "1) Helvetica Neue Best"
 echo "2) Ubuntu Updated"
@@ -123,7 +123,7 @@ echo "5) Comic Sans Original"
 echo "6) Rosemary"
 echo "7) Lato UI"
 echo "8) Chinacat"
-echo "9) Cocoon Light/Tall"
+echo "9) Cocon Light/Tall"
 echo "10) Century Gothic"
 echo "11) AppleMint"
 echo "12) Pycuaf"
@@ -142,6 +142,8 @@ echo "24) Exo"
 echo "25) Google Sans Mod"
 echo "26) Oneplus Slate"
 echo "27) Persona5"
+echo "28) Cocon Original"
+echo "29) Chococookey"
 echo "q) to quit: "
 echo ""
 echo "To restore your stock font just disable this module in Magisk Manager"
@@ -333,6 +335,20 @@ case "$INPUT" in
 		FONT="Persona5.zip"
 		FONT2="Persona5"
 		LINK="https://ncloud.zaclys.com/index.php/s/tu7hz0VfWDnS76E/download"
+		check_stored
+		font_steps
+		;;
+	28)
+		FONT="Font_CoconOriginal.zip"
+		FONT2="Font_CoconOriginal"
+		LINK="https://ncloud.zaclys.com/index.php/s/e4Hlt1rdWDwIawO/download"
+		check_stored
+		font_steps
+		;;
+	29)
+		FONT="Font_Chococooky.zip"
+		FONT2="Font_Chococooky"
+		LINK="https://ncloud.zaclys.com/index.php/s/sQsRFdBM0Jz2oTG/download"
 		check_stored
 		font_steps
 		;;

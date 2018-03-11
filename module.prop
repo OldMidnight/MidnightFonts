@@ -1,7 +1,8 @@
 id=MidnightFonts
 name=Midnight Fonts
-version=v1.2.4
-versionCode=11
+version=v1.3.0
+versionCode=12
 author=OldMidnight
 description=Systemless-ly and easily switch between fonts On-the-go. Just a quick reboot and you're good to go!
+support=https://forum.xda-developers.com/apps/magisk/module-midnightfonts-fonts-t3758607/page1
 minMagisk=1500

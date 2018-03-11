@@ -17,7 +17,7 @@ By using this module:
 * All fonts available in this module are all being hosted by me, so the font list will be maintained regularly and updated. Any font that hasnt been used in over a month will be removed. This rule will only apply after 50 fonts are available.
 
 ## Current Version
-v1.2.4
+v1.3.0
 
 ## Changelog
 
@@ -41,6 +41,8 @@ v1.2.4
 * update fix
 ### v1.2.4 - 11.03.18
 * added requested font
+### v1.3.0 - 11.03.18
+* Added addon.d support, applied fonts will now survive ROM dirty flashes etc, added requested fonts
 
 #### Magisk Template
 v1500
