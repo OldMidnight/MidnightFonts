@@ -17,28 +17,30 @@ By using this module:
 * All fonts available in this module are all being hosted by me, so the font list will be maintained regularly and updated. Any font that hasnt been used in over a month will be removed. This rule will only apply after 50 fonts are available.
 
 ## Current Version
-v1.2.3
+v1.2.4
 
 ## Changelog
 
 * Initial testing (4 Mar 2018)
 * Standard updated release
-### v0.1.2
+### v0.1.2 - 04.03.18
 * change zip download links, script optimizations
-### v1.0.0
-* STABLE RELEASE, completely reworked script, smaller with more functionality, added more fonts - 5/03/2018
-### v1.1.0
-* Massive rework, I am now hosting all provided fonts myself, all requested fonts are fully added - 6/03/2018
-### v1.1.1
+### v1.0.0 - 05.03.18
+* STABLE RELEASE, completely reworked script, smaller with more functionality, added more fonts
+### v1.1.0 - 06.03.18
+* Massive rework, I am now hosting all provided fonts myself, all requested fonts are fully added
+### v1.1.1 - 06.03.18
 * quick font update
-### v1.2.0b
-* Implements fix zip for fonts with missing characters - 07/03/2018
-### v1.2.1
-* added requested fonts, removed fix zip, optimized script, now much smaller - 07.03.2018
-### v1.2.2
-* added option to store fonts locally, find any saved font in the Fonts folder in your internal storage - 08.03.2018
-### v1.2.3
+### v1.2.0b - 07.03.18
+* Implements fix zip for fonts with missing characters
+### v1.2.1 - 07.03.18
+* added requested fonts, removed fix zip, optimized script, now much smaller
+### v1.2.2 - 08.03.18
+* added option to store fonts locally, find any saved font in the Fonts folder in your internal storage
+### v1.2.3 - 08.03.18
 * update fix
+### v1.2.4 - 11.03.18
+* added requested font
 
 #### Magisk Template
 v1500

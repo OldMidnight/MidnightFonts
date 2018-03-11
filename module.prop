@@ -1,7 +1,7 @@
 id=MidnightFonts
 name=Midnight Fonts
-version=v1.2.3
-versionCode=10
+version=v1.2.4
+versionCode=11
 author=OldMidnight
 description=Systemless-ly and easily switch between fonts On-the-go. Just a quick reboot and you're good to go!
 minMagisk=1500

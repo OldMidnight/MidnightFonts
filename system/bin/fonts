@@ -141,6 +141,7 @@ echo "23) Bariol"
 echo "24) Exo"
 echo "25) Google Sans Mod"
 echo "26) Oneplus Slate"
+echo "27) Persona5"
 echo "q) to quit: "
 echo ""
 echo "To restore your stock font just disable this module in Magisk Manager"
@@ -325,6 +326,13 @@ case "$INPUT" in
 		FONT="Font_OneplusSlate.zip"
 		FONT2="Font_OneplusSlate"
 		LINK="https://ncloud.zaclys.com/index.php/s/sBanwoo6n2oSsxw/download"
+		check_stored
+		font_steps
+		;;
+	27)
+		FONT="Persona5.zip"
+		FONT2="Persona5"
+		LINK="https://ncloud.zaclys.com/index.php/s/tu7hz0VfWDnS76E/download"
 		check_stored
 		font_steps
 		;;
