@@ -17,7 +17,7 @@ By using this module:
 * All fonts available in this module are all being hosted by me, so the font list will be maintained regularly and updated. Any font that hasnt been used in over a month will be removed. This rule will only apply after 50 fonts are available.
 
 ## Current Version
-v1.4.1
+v1.4.2
 
 ## Changelog
 
@@ -49,6 +49,8 @@ v1.4.1
 * Massive script changes, reduced size significantly, added font
 ### v1.4.1 - 12.03.18
 * Quick fix for Addon.d script
+### v1.4.2 - 12.03.18
+* Fix for Broken Locally stored zips
 
 #### Magisk Template
 v1500

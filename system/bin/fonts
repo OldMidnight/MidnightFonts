@@ -15,11 +15,10 @@ clear
 echo "Setting up environment..."
 wget -q -O "$STOREFONT"/DONT-DELETE "https://ncloud.zaclys.com/index.php/s/T1jp0CDkBMJFnwG/download"
 wget -q -O "$STOREFONT"/DONT-DELETE-2 "https://ncloud.zaclys.com/index.php/s/TNFfPaLyXeKxYLR/download"
-sleep 5s
 get_font () {
 	clear
 	echo "Retrieving font..."
-	if [ -d "$STOREFONT"/"$FONT" ]; then
+	if [ -d "$STOREFONT"/"$FONT".zip ]; then
 		chmod 777 "$STOREFONT"/"$FONT".zip
 		echo "completing step 1..."
 	fi
@@ -29,7 +28,7 @@ zip_sort_no_store () {
 	if [ -d "$STOREFONT"/META-INF ] && [ -d "$STOREFONT"/system ]; then
 		echo "completing step 2..."
 		cp -f "$STOREFONT"/system/fonts/* "$DIR"/
-		chmod 644 $DIR/*
+		chmod 644 "$DIR"/*
 		echo "cleaning up..."
 		rm -r "$STOREFONT"
 		echo "************************************************"
@@ -106,7 +105,7 @@ check_stored () {
 		echo "Detected locally saved version!"
 		echo "Applying font..."
 		cp -f "$FONTBACK"/"$FONT2"/system/fonts/* "$DIR"/
-		chmod 644 $DIR/*
+		chmod 644 "$DIR"/*
 		echo "Font has been applied!"
 		echo "************************************************"
 		echo "Reboot for changes to take effect!!!!"
@@ -129,10 +128,9 @@ echo "To restore your stock font just disable this module in Magisk Manager"
 read -r INPUT
 case "$INPUT" in
 	"$INPUT")
-		LINK="$( cat /sdcard/Fonts/'DONT-DELETE-2' | xargs | cut -d " " -f "$INPUT" )"
-		FONT="$( cat /sdcard/Fonts/'DONT-DELETE' | xargs | cut -d "." -f "$INPUT" )"
-		FONT2="$( cat /sdcard/Fonts/'DONT-DELETE' | xargs | cut -d "." -f "$INPUT" )"
-		sleep 2s
+		LINK=$( cat /sdcard/Fonts/'DONT-DELETE-2' | xargs | cut -d " " -f "$INPUT" )
+		FONT=$( cat /sdcard/Fonts/'DONT-DELETE' | xargs | cut -d "." -f "$INPUT" )
+		FONT2=$( echo $FONT | tr -d " "  )
 		check_stored
 		font_steps
 		;;
