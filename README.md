@@ -51,6 +51,8 @@ v1.4.2
 * Quick fix for Addon.d script
 ### v1.4.2 - 12.03.18
 * Fix for Broken Locally stored zips
+### v1.4.3 - 12.03.18
+* Fix for fonts, added fonts
 
 #### Magisk Template
 v1500

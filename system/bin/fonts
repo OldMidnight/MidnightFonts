@@ -13,8 +13,8 @@ mkdir "$FONTBACK"
 fi
 clear
 echo "Setting up environment..."
-wget -q -O "$STOREFONT"/DONT-DELETE "https://ncloud.zaclys.com/index.php/s/T1jp0CDkBMJFnwG/download"
-wget -q -O "$STOREFONT"/DONT-DELETE-2 "https://ncloud.zaclys.com/index.php/s/TNFfPaLyXeKxYLR/download"
+wget -q -O "$STOREFONT"/DONT-DELETE "https://ncloud.zaclys.com/index.php/s/jWG7VgSePf30Dat/download"
+wget -q -O "$STOREFONT"/DONT-DELETE-2 "https://ncloud.zaclys.com/index.php/s/HQpbpeNKYp5crlz/download"
 get_font () {
 	clear
 	echo "Retrieving font..."
